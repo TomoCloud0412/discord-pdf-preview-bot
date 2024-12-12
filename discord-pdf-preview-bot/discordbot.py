@@ -129,4 +129,4 @@ async def ipynb(ctx):
 
 
 
-bot.run("MTIyNTQ1OTUxMTQ2OTI3NzI2NQ.GMtQGh._A2HDMN6VylvzzlJ90W0CKAjgRuy-_uBZa4DAM")
+bot.run("API-code")
