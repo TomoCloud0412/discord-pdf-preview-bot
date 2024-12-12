@@ -1,0 +1,5 @@
+discord.py==2.3.2
+python-dotenv==0.19.2
+pdf2image==1.16.0
+nbconvert==6.4.0
+Pillow==10.3.0
