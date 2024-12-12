@@ -1,1 +1,1 @@
-# pdf-preview-discordbot
+# discord-pdf-preview-bot
