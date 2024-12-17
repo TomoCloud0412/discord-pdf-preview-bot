@@ -123,4 +123,4 @@ async def ipynb(ctx):
                 os.remove(file_path)
 
 
-bot.run("yuor-apicode")
+bot.run("ここにdiscordebotのトークンを入力")
