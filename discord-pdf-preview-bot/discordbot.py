@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 from os.path import join, dirname
 import pdf2image
 import os
-from nbconvert import HTMLExporter
 from PIL import Image
 from io import BytesIO
 
@@ -82,51 +81,8 @@ async def pdf(ctx):
     os.remove(f"{ctx.message.id}.pdf")
 
 
-@bot.command(name="ipynb", description="ipynbのプレビューを行います。")
-async def ipynb(ctx):
-    if ctx.message.author.bot:
-        return
-    
-    image_files = []  # 一時的に保存する画像ファイルのリスト
-
-    if ctx.message.attachments and any(a.filename.endswith('.ipynb') for a in ctx.message.attachments):
-        for attachment in ctx.message.attachments:
-            if attachment.filename.endswith('.ipynb'):
-                # ファイルをダウンロード
-                file_path = await attachment.save()
-
-                # HTMLに変換
-                exporter = HTMLExporter()
-                html, resources = exporter.from_filename(file_path)
-
-
-                 # HTMLからイメージを抽出
-                images = [Image.open(BytesIO(v)) for k, v in resources['outputs'].items() if k.endswith('.png')]
-
-
-                for i, img in enumerate(images):
-                    img_bytes = BytesIO()
-                    img.save(img_bytes, format='PNG')
-                    img_bytes.seek(0)
-                    image_files.append(discord.File(img_bytes, f"{os.path.splitext(attachment.filename)[0]}_{i+1}.png"))
-
-                    # 10枚ごとに送信
-                    if len(image_files) == 10:
-                        await ctx.message.channel.send(files=image_files)
-                        image_files = []
-
-                # 残りの画像を送信
-                if image_files:
-                    await ctx.message.channel.send(files=image_files)
-
-                # 一時ファイルを削除
-                os.remove(file_path)
 
 
 
 
-    
-
-
-
-bot.run("MTIyNTQ1OTUxMTQ2OTI3NzI2NQ.GMtQGh._A2HDMN6VylvzzlJ90W0CKAjgRuy-_uBZa4DAM")
+bot.run("ここにdiscordebotのトークンを入力")
