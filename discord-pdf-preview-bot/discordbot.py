@@ -82,7 +82,4 @@ async def pdf(ctx):
 
 
 
-
-
-
 bot.run("ここにdiscordebotのトークンを入力")
