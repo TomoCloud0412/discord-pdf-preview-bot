@@ -123,10 +123,4 @@ async def ipynb(ctx):
                 os.remove(file_path)
 
 
-
-
-    
-
-
-
-bot.run("API-code")
+bot.run("yuor-apicode")
