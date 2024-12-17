@@ -46,7 +46,6 @@ async def howto(ctx):
 
 
 
-
 @bot.command(name="pdf", description="pdfのプレビューを行います。")
 async def pdf(ctx):
     if ctx.message.author.bot:
